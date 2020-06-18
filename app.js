@@ -1,12 +1,12 @@
 const button = document.getElementById("convert");
-let text = document.getElementById("input").value;
-const output = document.getElementById("output");
+const text = document.getElementById("input");
+const output = document.querySelector(".result > p");
 
 main();
 
 function main() {
   button.addEventListener("click", function () {
-    convertText(text);
+    convertText(text.value);
   });
 }
 
@@ -20,7 +20,7 @@ function convertText(text) {
     } else {
       char = char.toUpperCase();
     }
-    copy = copy + char;
+    copy = copy.concat(char);
   }
   output.innerHTML = copy;
 }
